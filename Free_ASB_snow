@@ -1,0 +1,182 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* スクロールバーを非表示にする */
+    box-sizing: border-box;
+}
+
+/* 全体のレイアウト */
+#overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+/* ホワイトのブロック配置 */
+#block1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 1080px;
+    background-color: #ffffff;
+}
+
+#block2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1920px;
+    height: 79px;
+    background-color: #ffffff;
+}
+
+#block3 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 130px;
+    height: 1080px;
+    background-color: #ffffff;
+}
+
+#block4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 44px;
+    background-color: #ffffff;
+}
+
+/* D8EBF2のブロック */
+.rounded-block {
+    position: absolute;
+    bottom: 0; /* 下部に完全に接地 */
+    left: 100px; /* 左に少し移動 */
+    width: 698px;
+    height: 163px;
+    background-color: #D8EBF2;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    opacity: 0.6;
+}
+
+/* 左下の1/4円形パーツ */
+.quarter-circle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 540px;
+    height: 540px;
+    background-color: #ffffff;
+    border-top-left-radius: 540px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* 右下のテキスト */
+#text-overlay {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 16px; /* 文字サイズを小さくしました */
+    font-family: Arial, sans-serif;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* 雪の結晶のアニメーション */
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.snowflake {
+    position: absolute;
+    font-size: 24px;
+    color: white;
+    animation: snow 10s linear infinite;
+    opacity: 0.5; /* ここで半透明にしました */
+}
+
+.snowflake:nth-child(1) {
+    left: 5%;
+    animation-duration: 12s;
+    animation-delay: 0s;
+    font-size: 30px;
+}
+.snowflake:nth-child(2) {
+    left: 25%;
+    animation-duration: 14s;
+    animation-delay: 2s;
+    font-size: 28px;
+}
+.snowflake:nth-child(3) {
+    left: 45%;
+    animation-duration: 13s;
+    animation-delay: 1s;
+    font-size: 26px;
+}
+.snowflake:nth-child(4) {
+    left: 65%;
+    animation-duration: 15s;
+    animation-delay: 3s;
+    font-size: 32px;
+}
+.snowflake:nth-child(5) {
+    left: 85%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+    font-size: 28px;
+}
+.snowflake:nth-child(6) {
+    left: 15%;
+    animation-duration: 12s;
+    animation-delay: 4s;
+    font-size: 30px;
+}
+.snowflake:nth-child(7) {
+    left: 75%;
+    animation-duration: 16s;
+    animation-delay: 5s;
+    font-size: 32px;
+}
+
+/* 雪のアニメーション */
+@keyframes snow {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+/* Chat BOX ブロック */
+#chat-box-text {
+    position: absolute;
+    top: 900px; /* 水色のブロックの下から200px程度下げて配置 */
+    left: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* 白い文字 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 微細なシャドウ */
+    transform: rotate(-5deg); /* 少し斜めに */
+    font-family: Arial, sans-serif;
+    padding: 5px 10px;
+    background-color: #a6dcef; /* 濃い水色の背景 */
+    border-radius: 5px;
+    border: 2px solid #6c9ea5; /* 濃い水色の淵 */
+    transform-origin: top left; /* 斜めの回転基準を左上に */
+}
